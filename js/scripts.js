@@ -3,6 +3,7 @@ function PizzaProcessor() {
   this.currentID = 0;
 }
 
+const customerOrder = new PizzaProcessor();
 
 
 
