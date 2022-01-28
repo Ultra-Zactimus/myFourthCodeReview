@@ -97,7 +97,7 @@ Description: attachVal()
 
 Test: "It should compare options on submit and store those values into Object"
 Code:
-function attachVal() {
+function attachSizeVal() {
   let pizzaSize;
   if($("input#sizeS")) {
     pizzaSize = "Small";

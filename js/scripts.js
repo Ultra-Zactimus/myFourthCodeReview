@@ -20,6 +20,26 @@ PizzaProcessor.prototype.findOrder = function(id) {
   return false;
 };
 
+// function attachSizeVal() {
+//   const small = ("input#sizeS").val();
+//   const medium = ("input#sizeM").val();
+//   const large = ("input#sizeL").val();
+//   const gigantor = ("input#sizeG").val();
+//   let size;
+//   if (small) {
+//   size = "Small";
+
+//   } else if (medium) {
+//     size = "Medium";
+
+//   } else if (large) {
+//     size = "Large";
+
+//   } else {
+//     size = "Gigantor"
+//   }
+// }
+
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
@@ -31,10 +51,10 @@ $(document).ready(function(){
     event.preventDefault();
     const customerOrder = new PizzaProcessor();
 
-    const pizzaSize = $("input#sizeS").val(), $("input#sizeM").val(), $("input#sizeL").val(), $("input#sizeG").val();
-    const pizzaToppings = $("input#toppingPep, input#toppingOli, input#toppingMush, input#toppingSaug, input#toppingBef, input#toppingOni, input#toppingBell, input#toppingAnch").val();
+    const pizzaSize = $("input#size").val();
+    const pizzaToppings = $("input#toppings").val();
 
-    let orderDetails = new Pizza(pizzaSize, pizzaToppings);
+    let orderDetails = new Pizza(size, pizzaToppings);
     customerOrder.processOrder(orderDetails);
     alert(customerOrder);
   });
