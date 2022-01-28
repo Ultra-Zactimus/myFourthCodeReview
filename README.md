@@ -58,7 +58,7 @@ Code:
 PizzaProcessor.prototype.orderNumber = function() {
   this.currentID += 1;
   return this.currentID; 
-}
+};
 Expected Result: id[1] = Size: "Gigantor" Toppings: ["Pepperoni", "Mushrooms"]
 
 Description: processOrder()
@@ -68,8 +68,20 @@ Code:
 PizzaProcessor.prototype.processOrder = function(pizza) {
   pizza.id = this.orderNumber();
   this.pizza[pizza.id] = pizza;
-}
+};
 Expected Result: Pizza [Size: "Medium" Toppings: "Pepperoni"]
+
+Description: findOrder()
+
+Test: "It should find orders by their ID and return them"
+Code:
+PizzaProcessor.prototype.findOrder = function(id) {
+  if (this.pizza[id] != undefined) {
+    return this.pizza[id];
+  }
+  return false;
+};
+Expected Result: pizza[24] = Pizza[Size: "Small" Toppings: "Anchovies"]
 
 #
 
