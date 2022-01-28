@@ -5,30 +5,40 @@ function Pizza(size, toppings) {
 
 let orderDetails = new Pizza();
 
-function pushValue() {
-  const pizzaSize = $("input#size").val();
-  console.log(pizzaSize);
-    const pizzaToppings = $("input#toppings").val();
-    console.log(pizzaToppings);
-    
+function attachSizeVal() {
+  const small = $("input#sizeS").val();
+  const medium = $("input#sizeM").val();
+  const large = $("input#sizeL").val();
+  const gigantor = $("input#sizeG").val();
 
-    if (pizzaSize === "small" && pizzaToppings === "pepperoni") {
-      orderDetails.size = "Small";
-      orderDetails.toppings = "Pepperoni"
-      console.log(orderDetails);
-    }
+
+  if (small) {
+    orderDetails.size = "Small";
+
+  } else if (medium) {
+    orderDetails.size = "Medium";
+
+  } else if (large) {
+    orderDetails.size = "Large";
+
+  } else {
+    orderDetails.size = "Gigantor"
+  }
 }
+
+
+
+
+
 
 $(document).ready(function(){
   $("button#getPizza").click(function(event){
     event.preventDefault();
-    // const customerOrder = new PizzaProcessor();
 
-    pushValue()
+    attachSizeVal();
 
     
-    // customerOrder.processOrder(orderDetails);
-    // alert(customerOrder);
+
   });
 
 });

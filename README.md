@@ -93,36 +93,41 @@ function Pizza(size, toppings) {
 }
 Expected Result: Pizza("Large", "Pepperoni) = Pizza [Size: "Large" Toppings: "Pepperoni"]
 
-Description: attachVal()
+Description: attachSizeVal()
 
-<!-- Test: "It should compare options on submit and store those values into Object"
+Test: "It should compare options on submit and store those values into Object"
 Code:
+let orderDetails = new Pizza();
 function attachSizeVal() {
-  let pizzaSize;
-  if($("input#sizeS")) {
-    pizzaSize = "Small";
-  } else if (placeholder) {
-     placeholder
+  let small = $("input#sizeS").val();
+
+  if(small) {
+    orderDetails.szie = "Small";
   }
 }
-Expected Result: pizza = $("input#").val(); pizza [Size: "Small"] this isnt working, going to try another test--> 
+Expected Result: orderDetails{size: "Small"}
 
-Decription: displayOrderDetails()
+Description: attachToppingsVal()
 
-Test: "It should display the values inside the created pizza object"
-Code:
-function displayOrderDetails(customerOrderToDisplay) {
-  let htmlForCustomerOrder = "";
-  Object.keys(customerOrderToDisplay.pizza).foreach(function(key) {
-    const pizza = customerOrderToDisplay.processOrder(key);
-    htmlForCustomerOrder += pizza.id + pizza.size + pizza.toppings;
-  });
-  alert(pizza);
+Test: "It should look for all checked boxes and add items to object"
+Code: 
+
+function attachToppingsVal() {
+const pepperoni = $("input#toppingPep").val(); 
+const olives = $(input#toppingOli").val(); 
+const mushrooms = $("input#toppingMush").val();
+const sausage = $(input#toppingSaug).val();
+const beef = $("input#toppingBef").val();
+const onions = $("input#toppingOni").val();
+const peppers = ("input#toppingBell").val();
+const anchovies = $("input#toppingAnch").val();
+
+if (pepperoni) {
+  orderDetails.toppings = ["Pepperoni"];
 }
-Expected Result: pizza [size: "Large" toppings: "pepperoni"]
 
-Description: 
-
+}
+Expected Result: orderDetails{size: toppings: {"Pepperoni"}} 
 
 
 
