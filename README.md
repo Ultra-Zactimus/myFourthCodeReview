@@ -51,6 +51,16 @@ Code:
 const customerOrder = new PizzaProcessor();
 Expected Result: Pizza[Size: "Large" Toppings: "Pepperoni" ID: 0]
 
+Description: orderNumber()
+
+Test: "It should assign ID to pizza"
+Code:
+PizzaProcessor.prototype.orderNumber = function() {
+  this.currentID += 1;
+  return this.currentID; 
+}
+Expected Result: id[1] = Size: "Gigantor" Toppings: ["Pepperoni", "Mushrooms"]
+
 #
 
 ## Link to User Page: https://github.com/Ultra-Zactimus
