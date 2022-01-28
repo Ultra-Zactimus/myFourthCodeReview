@@ -25,12 +25,13 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-const customerOrder = new PizzaProcessor();
 
 $(document).ready(function(){
   $("button#getPizza").click(function(event){
     event.preventDefault();
-    const pizzaSize = $("input#sizeS, input#sizeM, input#sizeL, input#sizeG").val();
+    const customerOrder = new PizzaProcessor();
+
+    const pizzaSize = $("input#sizeS").val(), $("input#sizeM").val(), $("input#sizeL").val(), $("input#sizeG").val();
     const pizzaToppings = $("input#toppingPep, input#toppingOli, input#toppingMush, input#toppingSaug, input#toppingBef, input#toppingOni, input#toppingBell, input#toppingAnch").val();
 
     let orderDetails = new Pizza(pizzaSize, pizzaToppings);

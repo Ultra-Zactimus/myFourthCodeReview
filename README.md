@@ -93,6 +93,20 @@ function Pizza(size, toppings) {
 }
 Expected Result: Pizza("Large", "Pepperoni) = Pizza [Size: "Large" Toppings: "Pepperoni"]
 
+Description: attachVal()
+
+Test: "It should compare options on submit and store those values into Object"
+Code:
+function attachVal() {
+  let pizzaSize;
+  if($("input#sizeS")) {
+    pizzaSize = "Small";
+  } else if (placeholder) {
+     placeholder
+  }
+}
+Expected Result: pizza = $("input#").val(); pizza [Size: "Small"]
+
 
 
 #
