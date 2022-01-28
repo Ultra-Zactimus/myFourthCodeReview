@@ -3,8 +3,6 @@ function PizzaProcessor() {
   this.currentID = 0;
 }
 
-const customerOrder = new PizzaProcessor();
-
 PizzaProcessor.prototype.orderNumber = function() {
   this.currentID += 1;
   return this.currentID; 
@@ -27,11 +25,17 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
+const customerOrder = new PizzaProcessor();
 
 $(document).ready(function(){
-  ("form#sendIt").submit(function(event){
+  $("button#getPizza").click(function(event){
     event.preventDefault();
+    const pizzaSize = $("input#sizeS, input#sizeM, input#sizeL, input#sizeG").val();
+    const pizzaToppings = $("input#toppingPep, input#toppingOli, input#toppingMush, input#toppingSaug, input#toppingBef, input#toppingOni, input#toppingBell, input#toppingAnch").val();
 
+    let orderDetails = new Pizza(pizzaSize, pizzaToppings);
+    customerOrder.processOrder(orderDetails);
+    alert(customerOrder);
   });
 
 });
