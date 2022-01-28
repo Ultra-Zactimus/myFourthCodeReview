@@ -5,7 +5,10 @@ function PizzaProcessor() {
 
 const customerOrder = new PizzaProcessor();
 
-
+PizzaProcessor.prototype.orderNumber = function() {
+  this.currentID += 1;
+  return this.currentID; 
+}
 
 
 
