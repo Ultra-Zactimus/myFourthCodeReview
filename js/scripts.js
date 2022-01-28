@@ -1,6 +1,6 @@
 function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = toppings;
+  this.toppings = {};
 }
 
 let orderDetails = new Pizza();
@@ -28,47 +28,40 @@ function attachSizeVal() {
 
 function attachToppingsVal() {
 
-  const toppings = ["Pepperoni", "Olives", "Mushrooms", "Sausage", "Beef", "Onions", "Bell Peppers", "Anchovies"];
+  let toppings = [$("select#pep").val(), $("select#oliv").val(), $("select#mush").val()];
+  console.log(toppings);
 
-  const pep = $("input#pep").val();
-  const olive = $("input#oliv").val();
-  const mush = $("input#mush").val();
-  const saug = $("input#saug").val();
-  const beef = $("input#bef").val();
-  const onion = $("input#oni").val();
-  const peppers = $("input#bell").val();
-  const anch = $("input#anch").val();
+  length = toppings.length;
 
+  for (let i = 0; i < length; i++) {
+    
+ let loop = [toppings[i]];
+ console.log(loop);
 
-  if ($("input#pep") === "P3pperoni") {
+  if (loop.includes('pepperoni') && !loop.includes('mushroom') && !loop.includes('olive')) {
     orderDetails.toppings = "Pepperoni";
 
-  } else if (olive === "Ol1ves") {
+  } else if (loop.includes('olive') && !loop.includes('mushroom') && !loop.includes('pepperoni')) {
     orderDetails.toppings = "Olives";
 
-  } else if (mush === "Mushr00ms") {
-    orderDetials.toppings = "Mushrooms";
+  } else if (loop.includes('mushroom') && !loop.includes('olive') && !loop.includes('pepperoni')) {
+    orderDetails.toppings = "Mushrooms";
 
-  } else if (saug === "S4usage") {
-    orderDetails.toppings = "Sausage";
+  } else if (loop.includes('pepperoni') && loop.includes('olive') && !loop.includes('mushroom')) {
+    orderDetails.toppings = ["Pepperoni", "Olives"];
 
-  } else if (beef === "B33f") {
-    orderDetails.toppings = "Beef";
-
-  } else if (onion === "Onion5") {
-    orderDetails.toppings = "Onions";
-
-  }else if (peppers === "B3ll Pepp3rs") {
-    orderDetails.toppings = "Bell Peppers";
-
-  } else if (anch === "Anch0v1es") {
-    orderDetails.toppings = "Anchovies";
-
-  }
-  }
-
-
-
+  } else if (loop.includes('pepperoni') && loop.includes('mushroom') && !loop.includes('olive')) {
+    orderDetails.toppings = ["Pepperoni", "Mushrooms"];
+    
+  } else if (loop.includes('mushroom') && loop.includes('olive') && !loop.includes('pepperoni')) {
+    orderDetails.toppings = ["Olives", "Mushrooms"];
+    
+  } else if (loop.includes('pepperoni') && loop.includes('olive') && loop.includes('mushroom')) {
+    orderDetails.toppings = ["Pepperoni", "Olives", "Mushrooms"];
+    
+  } 
+}
+}
 
 
 $(document).ready(function(){
