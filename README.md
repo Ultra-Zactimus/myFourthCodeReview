@@ -130,6 +130,16 @@ if (pepperoni) {
 }
 Expected Result: orderDetails{size: toppings: {"Pepperoni"}} 
 
+Description: Add()
+
+Test: "should add 3 values"
+Code:
+function Add(num1, num2, num3) {
+    let total = (num1 + num2 + num3);
+    return total;
+}
+Expected Result: Add(1 + 0 + 2); 3 
+
 
 
 #

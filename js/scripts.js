@@ -8,7 +8,6 @@ let orderDetails = new Pizza();
 function attachSizeVal() {
   const small = $("input#sizeS").val();
   const medium = $("input#sizeM").val();
-  const large = $("input#sizeL").val();
   const gigantor = $("input#sizeG").val();
 
 
@@ -17,9 +16,6 @@ function attachSizeVal() {
 
   } else if (medium) {
     orderDetails.size = "Medium";
-
-  } else if (large) {
-    orderDetails.size = "Large";
 
   } else {
     orderDetails.size = "Gigantor"
@@ -48,16 +44,16 @@ function attachToppingsVal() {
     orderDetails.toppings = "Mushrooms";
 
   } else if (loop.includes('pepperoni') && loop.includes('olive') && !loop.includes('mushroom')) {
-    orderDetails.toppings = ["Pepperoni", "Olives"];
+    orderDetails.toppings = "Pepperoni", "Olives";
 
   } else if (loop.includes('pepperoni') && loop.includes('mushroom') && !loop.includes('olive')) {
-    orderDetails.toppings = ["Pepperoni", "Mushrooms"];
+    orderDetails.toppings = "Pepperoni", "Mushrooms";
     
   } else if (loop.includes('mushroom') && loop.includes('olive') && !loop.includes('pepperoni')) {
-    orderDetails.toppings = ["Olives", "Mushrooms"];
+    orderDetails.toppings = "Olives", "Mushrooms";
     
   } else if (loop.includes('pepperoni') && loop.includes('olive') && loop.includes('mushroom')) {
-    orderDetails.toppings = ["Pepperoni", "Olives", "Mushrooms"];
+    orderDetails.toppings = "Pepperoni", "Olives", "Mushrooms";
     
   } 
 }
