@@ -1,3 +1,10 @@
+function PizzaProcessor() {
+  this.pizza = {};
+  this.currentID = 0;
+}
+
+
+
 
 
 

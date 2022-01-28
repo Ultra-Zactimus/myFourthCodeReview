@@ -44,6 +44,13 @@ function PizzaProcessor() {
 }
 Expected Output: Pizza[Size: "Large" Toppings: "Pepperoni" ID: 0]
 
+Description: customerOrder
+
+Test: "It should turn Constructor into an Object to store customer's submissions"
+Code:
+const customerOrder = new PizzaProcessor();
+Expected Result: Pizza[Size: "Large" Toppings: "Pepperoni" ID: 0]
+
 #
 
 ## Link to User Page: https://github.com/Ultra-Zactimus
