@@ -61,6 +61,16 @@ PizzaProcessor.prototype.orderNumber = function() {
 }
 Expected Result: id[1] = Size: "Gigantor" Toppings: ["Pepperoni", "Mushrooms"]
 
+Description: processOrder()
+
+Test: "It should store customer's order to database"
+Code:
+PizzaProcessor.prototype.processOrder = function(pizza) {
+  pizza.id = this.orderNumber();
+  this.pizza[pizza.id] = pizza;
+}
+Expected Result: Pizza [Size: "Medium" Toppings: "Pepperoni"]
+
 #
 
 ## Link to User Page: https://github.com/Ultra-Zactimus
