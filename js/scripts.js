@@ -27,45 +27,56 @@ function attachSizeVal() {
 }
 
 function attachToppingsVal() {
+
+  const toppings = [$("input#pep, input#oliv, input#mush, input#saug, input#bef, input#oni, input#bell, input#anch").val()];
+
+  // $("input#pep") = "Pepperoni";
+  // $("input#oliv") = "Olives"; 
+  // $("input#mush") = "Mushrooms";
+  // $("input#saug") = "Sausage";
+  // $("input#bef") = "Beef";
+  // $("input#oni") = "Onions";
+  // $("input#bell") = "Bell Peppers";
+  // $("input#anch") = "Anchovies";
+
   
-  const pepperoni = $("input#toppingPep").val(); 
-  const olives = $("input#toppingOli").val(); 
-  const mushrooms = $("input#toppingMush").val();
-  const sausage = $("input#toppingSaug").val();
-  const beef = $("input#toppingBef").val();
-  const onions = $("input#toppingOni").val();
-  const peppers = $("input#toppingBell").val();
-  const anchovies = $("input#toppingAnch").val();
-  
-  if (pepperoni) {
-    orderDetails.toppings = ["Pepperoni"];
 
-  } else if (olives) {
-    orderDetails.toppings = ["Olives"];
+  length = toppings.length;
 
-  } else if (mushrooms) {
-    orderDetials.toppings = ["Mushrooms"];
+  for (let i = 0; i < length; i ++) {
+    
+    console.log(toppings[i]);
 
-  } else if (olives) {
-    orderDetails.toppings = ["Olives"];
 
-  } else if (sausage) {
-    orderDetails.toppings = ["Sausage"];
+  // if (pepperoni) {
+  //   orderDetails.toppings = ["Pepperoni"];
 
-  } else if (beef) {
-    orderDetails.toppings = ["Beef"];
+  // } else if (olives) {
+  //   orderDetails.toppings = ["Olives"];
 
-  } else if (onions) {
-    orderDetails.toppings = ["Onions"];
+  // } else if (mushrooms) {
+  //   orderDetials.toppings = ["Mushrooms"];
 
-  }else if (peppers) {
-    orderDetails.toppings = ["Peppers"];
+  // } else if (olives) {
+  //   orderDetails.toppings = ["Olives"];
 
-  } else {
-    orderDetails.toppings = ["Anchovies"];
+  // } else if (sausage) {
+  //   orderDetails.toppings = ["Sausage"];
 
+  // } else if (beef) {
+  //   orderDetails.toppings = ["Beef"];
+
+  // } else if (onions) {
+  //   orderDetails.toppings = ["Onions"];
+
+  // }else if (peppers) {
+  //   orderDetails.toppings = ["Peppers"];
+
+  // } else {
+  //   orderDetails.toppings = ["Anchovies"];
+
+  // }
   }
-  
   }
 
 
