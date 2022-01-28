@@ -22,7 +22,10 @@ PizzaProcessor.prototype.findOrder = function(id) {
   return false;
 };
 
-
+function Pizza(size, toppings) {
+  this.size = size;
+  this.toppings = toppings;
+}
 
 
 $(document).ready(function(){
