@@ -1,6 +1,6 @@
 function PizzaProcessor() {
   this.pizza = {};
-  this.currentID = 0;
+  // this.currentID = 0;
 }
 
 PizzaProcessor.prototype.orderNumber = function() {

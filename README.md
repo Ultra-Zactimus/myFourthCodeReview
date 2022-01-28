@@ -95,7 +95,7 @@ Expected Result: Pizza("Large", "Pepperoni) = Pizza [Size: "Large" Toppings: "Pe
 
 Description: attachVal()
 
-Test: "It should compare options on submit and store those values into Object"
+<!-- Test: "It should compare options on submit and store those values into Object"
 Code:
 function attachSizeVal() {
   let pizzaSize;
@@ -105,7 +105,22 @@ function attachSizeVal() {
      placeholder
   }
 }
-Expected Result: pizza = $("input#").val(); pizza [Size: "Small"]
+Expected Result: pizza = $("input#").val(); pizza [Size: "Small"] this isnt working, going to try another test--> 
+
+Decription: displayOrderDetails()
+
+Test: "It should display the values inside the created pizza object"
+Code:
+function displayOrderDetails(customerOrderToDisplay) {
+  let htmlForCustomerOrder = "";
+  Object.keys(customerOrderToDisplay.pizza).foreach(function(key) {
+    const pizza = customerOrderToDisplay.processOrder(key);
+    htmlForCustomerOrder += pizza.id + pizza.size + pizza.toppings;
+  });
+  alert(pizza);
+}
+Expected Result: pizza [size: "Large" toppings: "pepperoni"]
+
 
 
 
