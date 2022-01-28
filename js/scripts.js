@@ -26,7 +26,47 @@ function attachSizeVal() {
   }
 }
 
+function attachToppingsVal() {
+  
+  const pepperoni = $("input#toppingPep").val(); 
+  const olives = $("input#toppingOli").val(); 
+  const mushrooms = $("input#toppingMush").val();
+  const sausage = $("input#toppingSaug").val();
+  const beef = $("input#toppingBef").val();
+  const onions = $("input#toppingOni").val();
+  const peppers = $("input#toppingBell").val();
+  const anchovies = $("input#toppingAnch").val();
+  
+  if (pepperoni) {
+    orderDetails.toppings = ["Pepperoni"];
 
+  } else if (olives) {
+    orderDetails.toppings = ["Olives"];
+
+  } else if (mushrooms) {
+    orderDetials.toppings = ["Mushrooms"];
+
+  } else if (olives) {
+    orderDetails.toppings = ["Olives"];
+
+  } else if (sausage) {
+    orderDetails.toppings = ["Sausage"];
+
+  } else if (beef) {
+    orderDetails.toppings = ["Beef"];
+
+  } else if (onions) {
+    orderDetails.toppings = ["Onions"];
+
+  }else if (peppers) {
+    orderDetails.toppings = ["Peppers"];
+
+  } else {
+    orderDetails.toppings = ["Anchovies"];
+
+  }
+  
+  }
 
 
 
@@ -36,7 +76,8 @@ $(document).ready(function(){
     event.preventDefault();
 
     attachSizeVal();
-
+    attachToppingsVal();
+    console.log(orderDetails);
     
 
   });

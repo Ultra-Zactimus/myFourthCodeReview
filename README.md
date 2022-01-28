@@ -113,10 +113,11 @@ Test: "It should look for all checked boxes and add items to object"
 Code: 
 
 function attachToppingsVal() {
+  
 const pepperoni = $("input#toppingPep").val(); 
-const olives = $(input#toppingOli").val(); 
+const olives = $("input#toppingOli").val(); 
 const mushrooms = $("input#toppingMush").val();
-const sausage = $(input#toppingSaug).val();
+const sausage = $("input#toppingSaug").val();
 const beef = $("input#toppingBef").val();
 const onions = $("input#toppingOni").val();
 const peppers = ("input#toppingBell").val();
