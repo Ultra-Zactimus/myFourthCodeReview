@@ -83,6 +83,18 @@ PizzaProcessor.prototype.findOrder = function(id) {
 };
 Expected Result: pizza[24] = Pizza[Size: "Small" Toppings: "Anchovies"]
 
+Decription: Pizza()
+
+Test: "this should store size and toppings"
+Code:
+function Pizza(size, toppings) {
+  this.size = size;
+  this.toppings = toppings;
+}
+Expected Result: Pizza("Large", "Pepperoni) = Pizza [Size: "Large" Toppings: "Pepperoni"]
+
+
+
 #
 
 ## Link to User Page: https://github.com/Ultra-Zactimus
