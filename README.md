@@ -121,6 +121,8 @@ function displayOrderDetails(customerOrderToDisplay) {
 }
 Expected Result: pizza [size: "Large" toppings: "pepperoni"]
 
+Description: 
+
 
 
 
