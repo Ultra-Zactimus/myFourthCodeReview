@@ -10,6 +10,10 @@ PizzaProcessor.prototype.orderNumber = function() {
   return this.currentID; 
 }
 
+PizzaProcessor.prototype.processOrder = function(pizza) {
+  pizza.id = this.orderNumber();
+  this.pizza[pizza.id] = pizza;
+}
 
 
 
