@@ -8,13 +8,19 @@ const customerOrder = new PizzaProcessor();
 PizzaProcessor.prototype.orderNumber = function() {
   this.currentID += 1;
   return this.currentID; 
-}
+};
 
 PizzaProcessor.prototype.processOrder = function(pizza) {
   pizza.id = this.orderNumber();
   this.pizza[pizza.id] = pizza;
-}
+};
 
+PizzaProcessor.prototype.findOrder = function(id) {
+  if (this.pizza[id] != undefined) {
+    return this.pizza[id];
+  }
+  return false;
+};
 
 
 
