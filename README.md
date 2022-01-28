@@ -34,7 +34,15 @@ to go to GitHub page for the Repository.
 ### Test Driven Development
 #
 
+Decription: PizzaProcessor()
 
+Test: "It should store the info for the pizzas"
+Code:
+function PizzaProcessor() {
+  this.pizza = {};
+  this.currentID = 0;
+}
+Expected Output: Pizza[Size: "Large" Toppings: "Pepperoni" ID: 0]
 
 #
 
