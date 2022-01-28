@@ -28,56 +28,45 @@ function attachSizeVal() {
 
 function attachToppingsVal() {
 
-  const toppings = [$("input#pep, input#oliv, input#mush, input#saug, input#bef, input#oni, input#bell, input#anch").val()];
+  const toppings = ["Pepperoni", "Olives", "Mushrooms", "Sausage", "Beef", "Onions", "Bell Peppers", "Anchovies"];
 
-  // $("input#pep") = "Pepperoni";
-  // $("input#oliv") = "Olives"; 
-  // $("input#mush") = "Mushrooms";
-  // $("input#saug") = "Sausage";
-  // $("input#bef") = "Beef";
-  // $("input#oni") = "Onions";
-  // $("input#bell") = "Bell Peppers";
-  // $("input#anch") = "Anchovies";
-
-  
-
-  length = toppings.length;
-
-  for (let i = 0; i < length; i ++) {
-    
-    console.log(toppings[i]);
+  const pep = $("input#pep").val();
+  const olive = $("input#oliv").val();
+  const mush = $("input#mush").val();
+  const saug = $("input#saug").val();
+  const beef = $("input#bef").val();
+  const onion = $("input#oni").val();
+  const peppers = $("input#bell").val();
+  const anch = $("input#anch").val();
 
 
-  // if (pepperoni) {
-  //   orderDetails.toppings = ["Pepperoni"];
+  if ($("input#pep") === "P3pperoni") {
+    orderDetails.toppings = "Pepperoni";
 
-  // } else if (olives) {
-  //   orderDetails.toppings = ["Olives"];
+  } else if (olive === "Ol1ves") {
+    orderDetails.toppings = "Olives";
 
-  // } else if (mushrooms) {
-  //   orderDetials.toppings = ["Mushrooms"];
+  } else if (mush === "Mushr00ms") {
+    orderDetials.toppings = "Mushrooms";
 
-  // } else if (olives) {
-  //   orderDetails.toppings = ["Olives"];
+  } else if (saug === "S4usage") {
+    orderDetails.toppings = "Sausage";
 
-  // } else if (sausage) {
-  //   orderDetails.toppings = ["Sausage"];
+  } else if (beef === "B33f") {
+    orderDetails.toppings = "Beef";
 
-  // } else if (beef) {
-  //   orderDetails.toppings = ["Beef"];
+  } else if (onion === "Onion5") {
+    orderDetails.toppings = "Onions";
 
-  // } else if (onions) {
-  //   orderDetails.toppings = ["Onions"];
+  }else if (peppers === "B3ll Pepp3rs") {
+    orderDetails.toppings = "Bell Peppers";
 
-  // }else if (peppers) {
-  //   orderDetails.toppings = ["Peppers"];
+  } else if (anch === "Anch0v1es") {
+    orderDetails.toppings = "Anchovies";
 
-  // } else {
-  //   orderDetails.toppings = ["Anchovies"];
-
-  // }
   }
   }
+
 
 
 
