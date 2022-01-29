@@ -15,3 +15,9 @@
 .glitch {
   color: rgb(170, 170, 170);
 }
+
+#showTotal {
+  display:none;
+  background-color: black;
+  
+}

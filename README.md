@@ -34,62 +34,14 @@ to go to GitHub page for the Repository.
 ### Test Driven Development
 #
 
-Decription: PizzaProcessor()
-
-Test: "It should store the info for the pizzas"
-Code:
-function PizzaProcessor() {
-  this.pizza = {};
-  this.currentID = 0;
-}
-Expected Output: Pizza[Size: "Large" Toppings: "Pepperoni" ID: 0]
-
-Description: customerOrder
-
-Test: "It should turn Constructor into an Object to store customer's submissions"
-Code:
-const customerOrder = new PizzaProcessor();
-Expected Result: Pizza[Size: "Large" Toppings: "Pepperoni" ID: 0]
-
-Description: orderNumber()
-
-Test: "It should assign ID to pizza"
-Code:
-PizzaProcessor.prototype.orderNumber = function() {
-  this.currentID += 1;
-  return this.currentID; 
-};
-Expected Result: id[1] = Size: "Gigantor" Toppings: ["Pepperoni", "Mushrooms"]
-
-Description: processOrder()
-
-Test: "It should store customer's order to database"
-Code:
-PizzaProcessor.prototype.processOrder = function(pizza) {
-  pizza.id = this.orderNumber();
-  this.pizza[pizza.id] = pizza;
-};
-Expected Result: Pizza [Size: "Medium" Toppings: "Pepperoni"]
-
-Description: findOrder()
-
-Test: "It should find orders by their ID and return them"
-Code:
-PizzaProcessor.prototype.findOrder = function(id) {
-  if (this.pizza[id] != undefined) {
-    return this.pizza[id];
-  }
-  return false;
-};
-Expected Result: pizza[24] = Pizza[Size: "Small" Toppings: "Anchovies"]
-
 Decription: Pizza()
 
 Test: "this should store size and toppings"
 Code:
-function Pizza(size, toppings) {
+function Pizza(size, toppings, price) {
   this.size = size;
   this.toppings = toppings;
+  this.price = price;
 }
 Expected Result: Pizza("Large", "Pepperoni) = Pizza [Size: "Large" Toppings: "Pepperoni"]
 
@@ -99,13 +51,27 @@ Test: "It should compare options on submit and store those values into Object"
 Code:
 let orderDetails = new Pizza();
 function attachSizeVal() {
-  let small = $("input#sizeS").val();
+  const size = $("select#sizeS").val();
 
-  if(small) {
-    orderDetails.szie = "Small";
+  if (size === '8') {
+    orderDetails.size = "Small";
+    orderDeailts.price = '8';
+
+  } else if (size === '16') {
+    orderDetails.size = "Medium";
+    orderDetails.price = '16';
+
+  } else if (size === '22') {
+    orderDetails.size = "Gigantor"
+    orderDetails.price = '22'
+
+  } else {
+    orderDetails.size = "slice"
+    orderDetails.price = '3'
+    
   }
 }
-Expected Result: orderDetails{size: "Small"}
+Expected Result: Pizza {size: 'Small' price: '8'}
 
 Description: attachToppingsVal()
 
@@ -123,12 +89,54 @@ const onions = $("input#toppingOni").val();
 const peppers = ("input#toppingBell").val();
 const anchovies = $("input#toppingAnch").val();
 
-if (pepperoni) {
-  orderDetails.toppings = ["Pepperoni"];
-}
+function attachToppingsVal() {
 
+  let topping1 = parseInt($("select#pep").val());
+  let topping2 = parseInt($("select#oliv").val());
+  let topping3 = parseInt($("select#mush").val());
+
+
+  if ((topping1 + topping2 + topping3) === 1) {
+    orderDetails.toppings = "Pepperoni";
+    let addUpPrice = parseInt(orderDetails.price[0]) + 2;
+    orderDetails.price = addUpPrice.toString();
+
+  } else if ((topping1 + topping2 + topping3) === 2) {
+    orderDetails.toppings = "Olive";
+    let addUpPrice = parseInt(orderDetails.price[0]) + 2;
+    orderDetails.price = addUpPrice.toString();
+  
+  } else if ((topping1 + topping2 + topping3) === 4) {
+    orderDetails.toppings = "Mushroom";
+    let addUpPrice = parseInt(orderDetails.price[0]) + 2;
+    orderDetails.price = addUpPrice.toString();
+
+  } else if ((topping1 + topping2 + topping3) === 3) {
+    orderDetails.toppings = ["Pepperoni", "Olive"];
+    let addUpPrice = parseInt(orderDetails.price[0]) + 4;
+    orderDetails.price = addUpPrice.toString();
+
+  } else if ((topping1 + topping2 + topping3) === 5) {
+    orderDetails.toppings = ["Pepperoni", "Mushroom"];
+    let addUpPrice = parseInt(orderDetails.price[0]) + 4;
+    orderDetails.price = addUpPrice.toString();
+
+  } else if ((topping1 + topping2 + topping3) === 6) {
+    orderDetails.toppings = ["Olive", "Mushrooms"];
+    let addUpPrice = parseInt(orderDetails.price[0]) + 4;
+    orderDetails.price = addUpPrice.toString();
+
+  } else if ((topping1 + topping2 + topping3) === 7) {
+    orderDetails.toppings = ["Pepperoni", "Olive", "Mushroom"];
+    let addUpPrice = parseInt(orderDetails.price[0]) + 6;
+    orderDetails.price = addUpPrice.toString();
+
+  } else {
+    orderDetails.toppings = "Cheese";
+
+  }
 }
-Expected Result: orderDetails{size: toppings: {"Pepperoni"}} 
+Expected Result: Pizza {size: 'Small' toppings: 'Pepperoni' price: '10'} 
 
 Description: concatThisOrder()
 
@@ -158,8 +166,8 @@ Expected Result: Pizza 1 Small pizza with Olives comes out to $12."
 
 ## Known Bugs:
 #
-Document is a work in progress.
-Toppings defaulting to first pick inside of object
+Document is in a completed state.
+No known bugs
 Please feel free to contact me by email at: ultrazacky@gmail.com
 #
 ## License:
