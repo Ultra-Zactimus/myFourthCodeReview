@@ -1,0 +1,17 @@
+.allTheStuffs {
+  text-align: center;
+  background-image: url(../img/pizzaground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+}
+
+#h1 {
+  color:rgb(255, 0, 0);
+  background-color: black;
+  display:inline-block;
+}
+
+.glitch {
+  color: rgb(170, 170, 170);
+}
