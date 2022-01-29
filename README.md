@@ -149,8 +149,8 @@ Expected Result: Add(1 + 0 + 2); 3
 
 ## Known Bugs:
 #
-Document is in a completed state.
-No known bugs.
+Document is a work in progress.
+Toppings defaulting to first pick inside of object
 Please feel free to contact me by email at: ultrazacky@gmail.com
 #
 ## License:
