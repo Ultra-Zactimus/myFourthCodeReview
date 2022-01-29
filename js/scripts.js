@@ -5,58 +5,55 @@ function Pizza(size, toppings) {
 
 let orderDetails = new Pizza();
 
+function Add(num1, num2, num3) {
+  const result = num1 + num2 + num3;
+  console.log(result);
+}
+
 function attachSizeVal() {
-  const small = $("input#sizeS").val();
-  const medium = $("input#sizeM").val();
-  const gigantor = $("input#sizeG").val();
+  const size = $("select#sizeS").val();
 
-
-  if (small) {
+  if (size === '1') {
     orderDetails.size = "Small";
 
-  } else if (medium) {
+  } else if (size === '2') {
     orderDetails.size = "Medium";
 
-  } else {
+  } else if (size === '3') {
     orderDetails.size = "Gigantor"
   }
 }
 
 function attachToppingsVal() {
 
-  let toppings = [$("select#pep").val(), $("select#oliv").val(), $("select#mush").val()];
-  console.log(toppings);
-
-  length = toppings.length;
-
-  for (let i = 0; i < length; i++) {
-    
- let loop = [toppings[i]];
- console.log(loop);
-
-  if (loop.includes('pepperoni') && !loop.includes('mushroom') && !loop.includes('olive')) {
+  let topping1 = parseInt($("select#pep").val()); 
+  let topping2 = parseInt($("select#oliv").val()); 
+  let topping3 = parseInt($("select#mush").val());
+  
+  if ((topping1 + topping2 + topping3) === 1) {
     orderDetails.toppings = "Pepperoni";
 
-  } else if (loop.includes('olive') && !loop.includes('mushroom') && !loop.includes('pepperoni')) {
+  } else if ((topping1 + topping2 + topping3) === 2) {
     orderDetails.toppings = "Olives";
 
-  } else if (loop.includes('mushroom') && !loop.includes('olive') && !loop.includes('pepperoni')) {
+  } else if ((topping1 + topping2 + topping3) === 4) {
     orderDetails.toppings = "Mushrooms";
 
-  } else if (loop.includes('pepperoni') && loop.includes('olive') && !loop.includes('mushroom')) {
+  } else if ((topping1 + topping2 + topping3) === 3) {
     orderDetails.toppings = "Pepperoni", "Olives";
 
-  } else if (loop.includes('pepperoni') && loop.includes('mushroom') && !loop.includes('olive')) {
+  } else if ((topping1 + topping2 + topping3) === 5) {
     orderDetails.toppings = "Pepperoni", "Mushrooms";
     
-  } else if (loop.includes('mushroom') && loop.includes('olive') && !loop.includes('pepperoni')) {
+  } else if ((topping1 + topping2 + topping3) === 6) {
     orderDetails.toppings = "Olives", "Mushrooms";
     
-  } else if (loop.includes('pepperoni') && loop.includes('olive') && loop.includes('mushroom')) {
+  } else if ((topping1 + topping2 + topping3) === 7) {
     orderDetails.toppings = "Pepperoni", "Olives", "Mushrooms";
     
-  } 
-}
+  } else {
+    orderDetails.toppings = "Cheese";
+  }
 }
 
 
