@@ -130,21 +130,16 @@ if (pepperoni) {
 }
 Expected Result: orderDetails{size: toppings: {"Pepperoni"}} 
 
-Description: yourTotal()
+Description: concatThisOrder()
 
-Test: "It should evaluate size and toppings and return a price"
+Test: "It should concat the size, toppings and price"
 Code:
-Pizza.prototype.yourTotal = function() {
-  let defaultPrice;
-  if (orderDetails.size === 'Small' && orderDetails.toppings === 'cheese')
-    defaultPrice = "$12";
-} else if (orderDetails.size === 'Medium' && orderDetails.toppings === 'cheese') {
-    defaultPrice = "$19";
-} else if (orderDetails.size === 'Gigantor' && orderDetails.toppings === 'cheese') {
-    defaultPrice = "$28"
-}
+Pizza.prototype.concatThisOrder = function() {
+
+let yourOrder = "<h2>One " + orderDetails.size + " pizza with " + orderDetails.toppings + "comes out to $" + orderDetails.price + ".</h2>"
+
 };
-Expected Result: Pizza {size: 'Small' toppings: 'Cheese'} = "$12";
+Expected Result: Pizza One Small pizza with Olives comes out to $12."
 
 
 
