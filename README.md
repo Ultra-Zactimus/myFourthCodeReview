@@ -136,10 +136,18 @@ Test: "It should concat the size, toppings and price"
 Code:
 Pizza.prototype.concatThisOrder = function() {
 
-let yourOrder = "<h2>One " + orderDetails.size + " pizza with " + orderDetails.toppings + "comes out to $" + orderDetails.price + ".</h2>"
+  if (orderDetails.size != 'slice') {
+    
+    $("h5#total").html("<h5 id='total'>Your total: \"1 " + orderDetails.size + " " + orderDetails.toppings + " pizza comes out to $" + "\" </h5>");
 
-};
-Expected Result: Pizza One Small pizza with Olives comes out to $12."
+  } else {
+
+    $("h5#total").html("<h5 id='total'>Your total: \"1 " + orderDetails.size + " of " + orderDetails.toppings + " comes out to $3" + "\" </h5>");
+
+  }
+
+  };
+Expected Result: Pizza 1 Small pizza with Olives comes out to $12."
 
 
 

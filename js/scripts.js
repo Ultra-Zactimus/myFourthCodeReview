@@ -5,16 +5,19 @@ function Pizza(size, toppings, ) {
 
 let orderDetails = new Pizza();
 
-// Pizza.prototype.concatThisOrder = function() {
+Pizza.prototype.concatThisOrder = function() {
 
-//   let yourOrder = "<h2>One " + orderDetails.size + " pizza with " + orderDetails.toppings + "comes out to $" + //price// + ".</h2>"
+  if (orderDetails.size != 'slice') {
+    
+    $("h5#total").html("<h5 id='total'>Your total: \"1 " + orderDetails.size + " " + orderDetails.toppings + " pizza comes out to $" + "\" </h5>");
 
-//   };
+  } else {
 
-// function Add(num1, num2, num3) {
-//   const result = num1 + num2 + num3;
-//   console.log(result);
-// }
+    $("h5#total").html("<h5 id='total'>Your total: \"1 " + orderDetails.size + " of " + orderDetails.toppings + " comes out to $3" + "\" </h5>");
+
+  }
+
+  };
 
 function attachSizeVal() {
   const size = $("select#sizeS").val();
@@ -27,6 +30,9 @@ function attachSizeVal() {
 
   } else if (size === '24') {
     orderDetails.size = "Gigantor"
+
+  } else {
+    orderDetails.size = "slice"
   }
 }
 
@@ -40,22 +46,22 @@ function attachToppingsVal() {
     orderDetails.toppings = "Pepperoni";
 
   } else if ((topping1 + topping2 + topping3) === 2) {
-    orderDetails.toppings = "Olives";
+    orderDetails.toppings = "Olive";
 
   } else if ((topping1 + topping2 + topping3) === 4) {
-    orderDetails.toppings = "Mushrooms";
+    orderDetails.toppings = "Mushroom";
 
   } else if ((topping1 + topping2 + topping3) === 3) {
-    orderDetails.toppings = ["Pepperoni", "Olives"];
+    orderDetails.toppings = ["Pepperoni", "Olive"];
 
   } else if ((topping1 + topping2 + topping3) === 5) {
-    orderDetails.toppings = ["Pepperoni", "Mushrooms"];
+    orderDetails.toppings = ["Pepperoni", "Mushroom"];
 
   } else if ((topping1 + topping2 + topping3) === 6) {
-    orderDetails.toppings = ["Olives", "Mushrooms"];
+    orderDetails.toppings = ["Olive", "Mushrooms"];
 
   } else if ((topping1 + topping2 + topping3) === 7) {
-    orderDetails.toppings = ["Pepperoni", "Olives", "Mushrooms"];
+    orderDetails.toppings = ["Pepperoni", "Olive", "Mushroom"];
 
   } else {
     orderDetails.toppings = "Cheese";
@@ -68,7 +74,7 @@ $(document).ready(function() {
 
     attachSizeVal();
     attachToppingsVal();
-    console.log(orderDetails.size + " " + orderDetails.toppings);
+    orderDetails.concatThisOrder();
 
   });
 
