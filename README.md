@@ -130,15 +130,21 @@ if (pepperoni) {
 }
 Expected Result: orderDetails{size: toppings: {"Pepperoni"}} 
 
-Description: Add()
+Description: yourTotal()
 
-Test: "should add 3 values"
+Test: "It should evaluate size and toppings and return a price"
 Code:
-function Add(num1, num2, num3) {
-    let total = (num1 + num2 + num3);
-    return total;
+Pizza.prototype.yourTotal = function() {
+  let defaultPrice;
+  if (orderDetails.size === 'Small' && orderDetails.toppings === 'cheese')
+    defaultPrice = "$12";
+} else if (orderDetails.size === 'Medium' && orderDetails.toppings === 'cheese') {
+    defaultPrice = "$19";
+} else if (orderDetails.size === 'Gigantor' && orderDetails.toppings === 'cheese') {
+    defaultPrice = "$28"
 }
-Expected Result: Add(1 + 0 + 2); 3 
+};
+Expected Result: Pizza {size: 'Small' toppings: 'Cheese'} = "$12";
 
 
 

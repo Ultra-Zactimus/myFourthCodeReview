@@ -29,6 +29,8 @@ function attachToppingsVal() {
   let topping1 = parseInt($("select#pep").val()); 
   let topping2 = parseInt($("select#oliv").val()); 
   let topping3 = parseInt($("select#mush").val());
+
+  console.log(topping1 + topping2 + topping3)
   
   if ((topping1 + topping2 + topping3) === 1) {
     orderDetails.toppings = "Pepperoni";
@@ -40,16 +42,16 @@ function attachToppingsVal() {
     orderDetails.toppings = "Mushrooms";
 
   } else if ((topping1 + topping2 + topping3) === 3) {
-    orderDetails.toppings = "Pepperoni", "Olives";
+    orderDetails.toppings = ["Pepperoni", "Olives"];
 
   } else if ((topping1 + topping2 + topping3) === 5) {
-    orderDetails.toppings = "Pepperoni", "Mushrooms";
+    orderDetails.toppings = ["Pepperoni", "Mushrooms"];
     
   } else if ((topping1 + topping2 + topping3) === 6) {
-    orderDetails.toppings = "Olives", "Mushrooms";
+    orderDetails.toppings = ["Olives", "Mushrooms"];
     
   } else if ((topping1 + topping2 + topping3) === 7) {
-    orderDetails.toppings = "Pepperoni", "Olives", "Mushrooms";
+    orderDetails.toppings = ["Pepperoni", "Olives", "Mushrooms"];
     
   } else {
     orderDetails.toppings = "Cheese";
