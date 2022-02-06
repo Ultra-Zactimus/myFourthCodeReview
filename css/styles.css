@@ -1,4 +1,4 @@
-.allTheStuffs {
+#content {
   text-align: center;
   background-image: url(../img/pizzaground.jpg);
   background-repeat: no-repeat;
@@ -16,8 +16,13 @@
   color: rgb(170, 170, 170);
 }
 
-#showTotal {
+#total {
   display:none;
-  background-color: black;
-  
+  text-align: center;
+  color: beige;
+}
+
+#return {
+  display:none;
+  align-items: center;
 }
